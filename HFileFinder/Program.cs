@@ -10,7 +10,11 @@ namespace HFileFinder
     {
         static void Main(string[] args)
         {
+            FileFinder.Main();
 
+
+
+            int filesCount = FileFinder.path.Length;
         }
     }
 }

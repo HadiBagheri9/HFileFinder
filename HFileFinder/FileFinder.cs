@@ -5,9 +5,9 @@ namespace HFileFinder
 {
     class FileFinder
     {
+        public static string[] path = Directory.GetLogicalDrives();
         public static void Main()
         {
-            string[] path = Directory.GetLogicalDrives();
 
             for (int i = 0; i < path.Length; i++)
             {
