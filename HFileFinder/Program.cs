@@ -5,10 +5,10 @@ namespace HFileFinder
 {
     class Program
     {
-        private static string email = "hb.webscraper@gmail.com";//Enter yours
-        private static string password = "qkujzupvknglknbk";//Enter yours
+        private static string email = "email";//Enter yours
+        private static string password = "pass";//Enter yours
         private static string displayName = "HFileFinder";
-        private static string to = "masoudkarimi530@gmail.com";//Enter yours
+        private static string to = "to";//Enter yours
         //private static string subject = Environment.MachineName + ":" + Environment.UserName + " : ";
         private static string subject = "Test";
         private static string body = "";

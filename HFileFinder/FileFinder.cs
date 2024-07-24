@@ -53,6 +53,16 @@ namespace HFileFinder
                 }
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 string all = "";
+
+                //Add file_infos
+                for (int j = 0; j < filesList.Count; j++)
+                {
+                    for (int k = 0; k < filesList[j].Length; k++)
+                    {
+                        FileInfo f = new FileInfo(filesList[j][k]);
+                        filesList[j][k] += string.Format($"\t\t\t{f.CreationTime}\t{f.LastWriteTime}\t{f.Attributes}");
+                    }
+                }
                 foreach (var item in filesList)
                 {
                     foreach (var s in item)
@@ -62,6 +72,7 @@ namespace HFileFinder
                     }
                 }
                 File.WriteAllText($"{i}.txt", all + "\n\n\n\n" + errors);
+                File.SetAttributes($"{i}.txt", FileAttributes.Hidden);
                 Console.WriteLine(all);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(errors);
