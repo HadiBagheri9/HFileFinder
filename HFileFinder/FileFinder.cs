@@ -6,7 +6,7 @@ namespace HFileFinder
     class FileFinder
     {
         public static string[] path = Directory.GetLogicalDrives();
-        public static void Main()
+        public static void Work()
         {
 
             for (int i = 0; i < path.Length; i++)
