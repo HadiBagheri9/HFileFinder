@@ -6,7 +6,7 @@ namespace HFileFinder
     class FileFinder
     {
         public static string[] path = Directory.GetLogicalDrives();
-        public static void Work()
+        public static void Work(string s)
         {
 
             for (int i = 0; i < path.Length; i++)
@@ -65,14 +65,14 @@ namespace HFileFinder
                 }
                 foreach (var item in filesList)
                 {
-                    foreach (var s in item)
+                    foreach (var str in item)
                     {
                         //Console.WriteLine(s);
-                        all += s + "\n";
+                        all += str + "\n";
                     }
                 }
-                File.WriteAllText($"{i}.txt", all + "\n\n\n\n" + errors);
-                File.SetAttributes($"{i}.txt", FileAttributes.Hidden);
+                File.WriteAllText($"{s}{i}.txt", all + "\n\n\n\n" + errors);
+                File.SetAttributes($"{s}{i}.txt", FileAttributes.Hidden);
                 Console.WriteLine(all);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(errors);
